@@ -17,6 +17,9 @@
     	$scope.pics = [];
     	$scope.busy = false;
     	$scope.nextpage = null;
+        $scope.showNav = false;
+
+        $( ".searchInputCenter" ).focus();
 
 
     	$scope.addMoreItems = function(){
@@ -51,9 +54,12 @@
                 $scope.searchStr = $scope.searchStr.replace(/ /g,'').replace(/[^\w\s]/gi, '');
             }
             
-            $scope.pics = [];;
+            $scope.pics = [];
+            $( ".searchInputCenter" ).focus();
 
             if (!tmpStr || tmpStr.length == 0){
+                console.log('zero results');
+                $( ".searchInputCenter" ).focus();
                 return 0;
             }
 
@@ -62,7 +68,6 @@
             setTimeout(function() {
                 if (tmpStr === $scope.searchStr)
                 {
-
                     $scope.searchStr = tmpStr.replace(/ /g,'');
 
                     var endPoint = "https://api.instagram.com/v1/tags/" + tmpStr + "/media/recent?client_id=67d226cf734844ba876821fc425d366e&callback=mycb";
@@ -70,12 +75,26 @@
                         .success(function(response) {
                             $scope.pics = response.data;
                             $scope.nextpage = response.pagination.next_url;
+                            $scope.showNav = true;
                         })
                         .error(function(error) {
                             console.log(error);
                         });
+                        $( ".searchInputTop" ).focus();
                 }   
             },300);
         });
 
     });
+
+(function($){
+
+
+var maintextHeight = $('.main-text').height();
+$('.main-text').css('top', '50%').css('top', '-=' + (maintextHeight));
+
+})(jQuery)
+
+
+
+
