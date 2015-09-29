@@ -4,24 +4,32 @@
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Untitled</title>
-		
+		<title>Instantgram</title>
 		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/paper/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body>
-		<div class="container" ng-controller="instagramCtrl">
-			<div class="row">
-				<div class="col-lg-12">
-					<form>
+	<body ng-controller="instagramCtrl">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Instantgram</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<label for="inputSearch">Search</label>
-							<input type="text" class="form-control" id="inputSearch" placeholder="Search" ng-model="keyword" ng-change="search(keyword)" ng-model-options="{debounce:3000}" infinite-scroll-disabled='busy'>
+							<input type="text" data-ng-model="searchStr" ng-model-options="{debounce: 1000}" class="form-control" placeholder="Search">
 						</div>
-						<!-- <button type="submit" class="btn btn-default">Submit</button> -->
 					</form>
 				</div>
 			</div>
+		</nav>
+		<div class="container">
 			<div class="row">
 				<div infinite-scroll="addMoreItems()" infinite-scroll-distance='0'>
 					<div ng-repeat="p in pics" class="col-md-3">
@@ -32,7 +40,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
 		<script type='text/javascript' src='js/ng-infinite-scroll.min.js'></script>
 		<script src="js/main.js"></script>
