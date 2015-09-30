@@ -31,7 +31,7 @@
 		</nav>
 		<div class="container">
 			<div class="main-text" ng-show="pics.length == 0">
-				<h1>Search Instagram Photos Instantly!</h1>
+				<h1>Search Instagram Photos<br> Instantly!</h1>
 				<p>Just enter your keyword and start searching</br>
 				You can scroll down to see more pictures</p>
 				<form class="navbar-form" role="search">
@@ -43,9 +43,10 @@
 			<div class="row" infinite-scroll="addMoreItems()" infinite-scroll-distance='0'>
 				<div ng-repeat="p in pics" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 					<a href="{{p.link}}" target="_blank">
-						<img ng-src="{{p.images.low_resolution.url}}" class="img-responsive-full-width" title="{{p.caption.text}}">
+						<img ng-src="{{p.images.low_resolution.url}}" class="img-responsive-full-width" title="{{p
+						.caption.text}}">
+						<span class="count glyphicon glyphicon-heart"> {{p.likes.count}}</span>
 					</a>
-					<span class="glyphicon glyphicon-heart"> {{p.likes.count}}</span>
 				</div>
 				<div style='clear: both;'></div>
 			</div>
