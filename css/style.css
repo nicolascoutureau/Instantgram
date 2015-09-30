@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100);
+
 body{
 	margin-top: 100px;
+	font-family: 'Raleway', sans-serif;
 }
 
 .main-text{
@@ -7,6 +10,15 @@ body{
 	position: absolute;
 	left: 0;
 	right: 0;
+}
+
+h1{
+	font-size: 70px;
+}
+
+p{
+	font-size: 20px;
+
 }
 
 .searchInputCenter{
