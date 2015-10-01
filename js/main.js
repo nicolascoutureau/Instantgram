@@ -87,13 +87,13 @@
 
     });
 
-(function($){
+// (function($){
 
 
-var maintextHeight = $('.main-text').height();
-$('.main-text').css('top', '50%').css('top', '-=' + (maintextHeight));
+// var maintextHeight = $('.main-text').height();
+// $('.main-text').css('top', '50%').css('top', '-=' + (maintextHeight));
 
-})(jQuery)
+// })(jQuery)
 
 
 
