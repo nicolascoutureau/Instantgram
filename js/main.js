@@ -70,7 +70,7 @@
                 {
                     $scope.searchStr = tmpStr.replace(/ /g,'');
 
-                    var endPoint = "https://api.instagram.com/v1/tags/" + tmpStr + "/media/recent?client_id=67d226cf734844ba876821fc425d366e&callback=mycb";
+                    var endPoint = "https://api.instagram.com/v1/tags/" + tmpStr + "/media/recent?access_token=11179731.67d226c.43ab62257b6b4035927fc0e2225b0d2c&callback=mycb";
                     $http.jsonp(endPoint)
                         .success(function(response) {
                             $scope.pics = response.data;
