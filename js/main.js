@@ -71,7 +71,7 @@
                     $scope.searchStr = tmpStr.replace(/ /g,'');
 
                     var endPoint = "https://api.instagram.com/v1/tags/" + tmpStr + "/media/recent?access_token=11179731.67d226c.43ab62257b6b4035927fc0e2225b0d2c";
-                    $http.json(endPoint)
+                    $http.jsonp(endPoint)
                         .success(function(response) {
 			    console.log(response);
                             $scope.pics = response.data;
